@@ -69,7 +69,7 @@ TaskFunction createHotModeTest({
       pubspec.writeAsStringSync(
         pubspec
             .readAsLinesSync()
-            .whereNot((String element) => element.startsWith('resolution: workspace'))
+            .whereNot((String line) => line.startsWith('resolution: workspace'))
             .join('\n'),
       );
 
