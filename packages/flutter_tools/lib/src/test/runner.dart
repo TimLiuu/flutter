@@ -194,11 +194,10 @@ interface class FlutterTestRunner {
   // union of package:test_core, package:ffi, and all the dependencies of the
   // project under test. This function generates such a package_config.json.
   static Future<void> _generateIsolateSpawningTesterPackageConfig({
-    required FlutterProject flutterProject,
     required File isolateSpawningTesterPackageConfigFile,
   }) async {
     final File projectPackageConfigFile = globals.fs
-        .directory(flutterProject.directory.path)
+        .directory(globals.fs.path.join(Cache.flutterRoot!))
         .childDirectory('.dart_tool')
         .childFile('package_config.json');
     final PackageConfig projectPackageConfig = PackageConfig.parseBytes(
@@ -600,20 +599,19 @@ class SpawnPlugin extends PlatformPlugin {
   }) async {
     assert(testFiles.length > 1);
 
-    final Directory buildDirectory = globals.fs.directory(
-      globals.fs.path.join(flutterProject!.directory.path, getBuildDirectory()),
-    );
+    final String projectPath = flutterProject!.directory.path;
+    final Directory projectDirectory = globals.fs.directory(projectPath);
+    final Directory buildDirectory = projectDirectory.childDirectory(getBuildDirectory());
     final Directory isolateSpawningTesterDirectory = buildDirectory.childDirectory(
       'isolate_spawning_tester',
     );
     isolateSpawningTesterDirectory.createSync();
 
-    final File isolateSpawningTesterPackageConfigFile = isolateSpawningTesterDirectory
+    final File isolateSpawningTesterPackageConfigFile = projectDirectory
         .childDirectory('.dart_tool')
         .childFile('package_config.json');
     isolateSpawningTesterPackageConfigFile.createSync(recursive: true);
     await _generateIsolateSpawningTesterPackageConfig(
-      flutterProject: flutterProject,
       isolateSpawningTesterPackageConfigFile: isolateSpawningTesterPackageConfigFile,
     );
     final PackageConfig isolateSpawningTesterPackageConfig = PackageConfig.parseBytes(
