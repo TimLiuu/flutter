@@ -34,6 +34,12 @@ class UpdatePackagesCommand extends FlutterCommand {
             'This will actually modify the pubspec.yaml files in your checkout.',
         negatable: false,
       )
+      ..addFlag(
+        _keyUpdateHashes,
+        help: 'Update the hashes of the pubspecs.',
+        negatable: false,
+        hide: true, // We don't want to promote usage, to not circumvent using this script to update
+      )
       ..addOption(
         _keyCherryPickPackage,
         help:
@@ -57,6 +63,7 @@ class UpdatePackagesCommand extends FlutterCommand {
   }
 
   final String _keyForceUpgrade = 'force-upgrade';
+  final String _keyUpdateHashes = 'update-hashes';
   final String _keyCherryPickPackage = 'cherry-pick-package';
   final String _keyCherryPickVersion = 'cherry-pick-version';
   final String _keyOffline = 'offline';
@@ -116,6 +123,7 @@ class UpdatePackagesCommand extends FlutterCommand {
     );
 
     final bool forceUpgrade = boolArg(_keyForceUpgrade);
+    final bool updateHashes = boolArg(_keyUpdateHashes);
     final bool offline = boolArg(_keyOffline);
     final String? cherryPickPackage = stringArg(_keyCherryPickPackage);
     final String? cherryPickVersion = stringArg(_keyCherryPickVersion);
@@ -183,7 +191,7 @@ class UpdatePackagesCommand extends FlutterCommand {
       _checkWithFlutterTools(rootDirectory);
     } else {
       globals.printStatus('Running pub get only...');
-      if (const bool.fromEnvironment('RESET_HASH')) {
+      if (updateHashes) {
         _writePubspecs(packages);
       }
       _verifyPubspecs(packages);
@@ -254,7 +262,7 @@ class UpdatePackagesCommand extends FlutterCommand {
   }
 
   void _checkHash(String pubspec, Directory directory) {
-    final RegExpMatch? firstMatch = dependencyRegex.firstMatch(pubspec);
+    final RegExpMatch? firstMatch = checksumRegex.firstMatch(pubspec);
     if (firstMatch != null) {
       final String checksum = firstMatch[1]!;
       final String actualChecksum = _computeChecksum(pubspec);
@@ -274,16 +282,20 @@ class UpdatePackagesCommand extends FlutterCommand {
     globals.printStatus('Writing hashes to pubspecs...');
     for (final Directory directory in packages) {
       globals.printTrace('Reading pubspec.yaml from ${directory.path}');
-      String pubspec = directory.childFile('pubspec.yaml').readAsStringSync();
+      final File pubspecFile = directory.childFile('pubspec.yaml');
+      String pubspec = pubspecFile.readAsStringSync();
       final String actualChecksum = _computeChecksum(pubspec);
-      final RegExpMatch? firstMatch = dependencyRegex.firstMatch(pubspec);
+      final RegExpMatch? firstMatch = checksumRegex.firstMatch(pubspec);
       if (firstMatch != null) {
-        pubspec.replaceFirst(dependencyRegex, '$kDependencyChecksum$actualChecksum');
-        directory.childFile('pubspec.yaml').writeAsStringSync(pubspec);
+        pubspec = pubspec.replaceRange(
+          firstMatch.start,
+          firstMatch.end,
+          '$kDependencyChecksum$actualChecksum',
+        );
       } else {
         pubspec += '\n$kDependencyChecksum$actualChecksum';
-        directory.childFile('pubspec.yaml').writeAsStringSync(pubspec);
       }
+      pubspecFile.writeAsStringSync(pubspec);
     }
     globals.printStatus('All pubspecs are now up to date.');
   }
@@ -309,5 +321,5 @@ class UpdatePackagesCommand extends FlutterCommand {
 
   /// This is the string output before a checksum of the packages used.
   static const String kDependencyChecksum = '# PUBSPEC CHECKSUM: ';
-  final RegExp dependencyRegex = RegExp('$kDependencyChecksum([a-zA-Z0-9]+)');
+  final RegExp checksumRegex = RegExp('$kDependencyChecksum([a-zA-Z0-9]+)');
 }
