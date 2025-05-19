@@ -201,7 +201,7 @@ void main() {
     testUsingContext(
       'updates packages - only runs pub get',
       () async {
-        final UpdatePackagesCommand command = UpdatePackagesCommand();
+        final UpdatePackagesCommand command = UpdatePackagesCommand(verboseHelp: false);
         await createTestCommandRunner(command).run(<String>['update-packages']);
         expect(pub.pubspec?.dependencies, Pubspec.parse(kFlutterWorkspacePubspecYaml).dependencies);
       },
@@ -216,7 +216,7 @@ void main() {
     testUsingContext(
       '--force-upgrade updates packages',
       () async {
-        final UpdatePackagesCommand command = UpdatePackagesCommand();
+        final UpdatePackagesCommand command = UpdatePackagesCommand(verboseHelp: false);
         await createTestCommandRunner(command).run(<String>['update-packages', '--force-upgrade']);
         expect(
           pub.pubspec?.dependencies,
@@ -237,7 +237,7 @@ void main() {
     testUsingContext(
       '--cherry-pick-package',
       () async {
-        final UpdatePackagesCommand command = UpdatePackagesCommand();
+        final UpdatePackagesCommand command = UpdatePackagesCommand(verboseHelp: false);
         await createTestCommandRunner(command).run(<String>[
           'update-packages',
           '--cherry-pick-package=vector_math',
@@ -263,7 +263,7 @@ void main() {
     testUsingContext(
       '--force-upgrade',
       () async {
-        final UpdatePackagesCommand command = UpdatePackagesCommand();
+        final UpdatePackagesCommand command = UpdatePackagesCommand(verboseHelp: false);
         await createTestCommandRunner(command).run(<String>['update-packages', '--force-upgrade']);
       },
       overrides: <Type, Generator>{
