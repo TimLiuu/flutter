@@ -164,8 +164,9 @@ class UpdatePackagesCommand extends FlutterCommand {
 
     final FlutterProject project = FlutterProject.fromDirectory(rootDirectory);
     final List<Directory> packages = <Directory>[...runner!.getRepoPackages(), rootDirectory];
-
-    _verifyPubspecs(packages);
+    if (!updateHashes) {
+      _verifyPubspecs(packages);
+    }
     if (cherryPick != null) {
       globals.printStatus(
         'Pinning package "${cherryPick.package}" to version "${cherryPick.version}"...',
