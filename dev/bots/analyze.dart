@@ -172,10 +172,7 @@ Future<void> run(List<String> arguments) async {
 
   // Ensure that all package dependencies are in sync.
   printProgress('Package dependencies...');
-  await runCommand(flutter, <String>[
-    'update-packages',
-    '--verify-only',
-  ], workingDirectory: flutterRoot);
+  await runCommand(flutter, <String>['update-packages'], workingDirectory: flutterRoot);
 
   /// Ensure that no new dependencies have been accidentally
   /// added to core packages.
