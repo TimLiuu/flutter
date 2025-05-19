@@ -7,14 +7,14 @@ environment:
 resolution: workspace
 
 dependencies:
-  args: 2.7.0
-  http: 1.4.0
-  meta: 1.16.0
-  path: 1.9.1
+  args: any
+  http: any
+  meta: any
+  path: any
 
 
 dev_dependencies:
-  test: 1.25.15
+  test: any
 
 
-# PUBSPEC CHECKSUM: 71jrpc
+# PUBSPEC CHECKSUM: bggbre

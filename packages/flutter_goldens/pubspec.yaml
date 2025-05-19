@@ -14,11 +14,11 @@ dependencies:
     sdk: flutter
   flutter_test:
     sdk: flutter
-  crypto: 3.0.6
-  file: 7.0.1
-  platform: 3.1.6
-  process: 5.0.3
+  crypto: any
+  file: any
+  platform: any
+  process: any
 
-  path: 1.9.1
+  path: any
 
-# PUBSPEC CHECKSUM: rmceq8
+# PUBSPEC CHECKSUM: ckbk6o

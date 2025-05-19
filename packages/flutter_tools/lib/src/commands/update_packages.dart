@@ -198,6 +198,7 @@ class UpdatePackagesCommand extends FlutterCommand {
     }
     _verifyPubspecs(packages);
     _checkWithFlutterTools(rootDirectory);
+    _checkPins(rootDirectory);
 
     await pub.get(context: PubContext.pubGet, project: project);
     await pub.get(
@@ -229,7 +230,6 @@ class UpdatePackagesCommand extends FlutterCommand {
       globals.printTrace('Reading pubspec.yaml from ${directory.path}');
       final String pubspecString = directory.childFile('pubspec.yaml').readAsStringSync();
       _checkHash(pubspecString, directory);
-      _checkPins(pubspecString, directory);
     }
   }
 
@@ -253,8 +253,8 @@ class UpdatePackagesCommand extends FlutterCommand {
     }
   }
 
-  void _checkPins(String pubspecString, Directory directory) {
-    final Pubspec pubspec = Pubspec.parse(pubspecString);
+  void _checkPins(Directory directory) {
+    final Pubspec pubspec = Pubspec.parse(directory.childFile('pubspec.yaml').readAsStringSync());
     for (final MapEntry<String, String> pin in kManuallyPinnedDependencies.entries) {
       Dependency dependency;
       if (pubspec.dependencies.containsKey(pin.key)) {

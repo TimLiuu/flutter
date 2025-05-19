@@ -14,12 +14,12 @@ dependencies:
   flutter_driver:
     sdk: flutter
 
-  matcher: 0.12.17
-  path: 1.9.1
+  matcher: any
+  path: any
 
 dev_dependencies:
-  test: 1.25.15
+  test: any
 
-  args: 2.7.0
+  args: any
 
-# PUBSPEC CHECKSUM: almi80
+# PUBSPEC CHECKSUM: p5turf

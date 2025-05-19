@@ -9,17 +9,17 @@ environment:
 resolution: workspace
 
 dependencies:
-  process: 5.0.3
-  vm_service: 15.0.0
+  process: any
+  vm_service: any
 
-  meta: 1.16.0
+  meta: any
 
 dev_dependencies:
-  test: 1.25.15
+  test: any
 
 
 dartdoc:
   # Exclude this package from the hosted API docs.
   nodoc: true
 
-# PUBSPEC CHECKSUM: h0is0j
+# PUBSPEC CHECKSUM: se453b

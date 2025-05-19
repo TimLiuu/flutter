@@ -11,17 +11,17 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  args: 2.7.0
-  vector_math: 2.1.4
-  xml: 6.5.0
+  args: any
+  vector_math: any
+  xml: any
 
-  collection: 1.19.1
-  meta: 1.16.0
+  collection: any
+  meta: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  path: 1.9.1
+  path: any
 
-# PUBSPEC CHECKSUM: 7nam7r
+# PUBSPEC CHECKSUM: stlhuo

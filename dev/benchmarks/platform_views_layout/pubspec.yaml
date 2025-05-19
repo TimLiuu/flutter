@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  google_mobile_ads: 5.1.0
+  google_mobile_ads: any
   # To change the version of the gallery assets, edit
   #   //packages/flutter_tools/lib/src/commands/update_packages.dart
   # and run
@@ -21,7 +21,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
 
 flutter:
@@ -30,4 +30,4 @@ flutter:
     - packages/flutter_gallery_assets/people/square/ali.png
     - packages/flutter_gallery_assets/places/india_chettinad_silk_maker.png
 
-# PUBSPEC CHECKSUM: lqdve6
+# PUBSPEC CHECKSUM: ckphes

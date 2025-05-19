@@ -11,9 +11,9 @@ dependencies:
   #
   # For detailed instructions, refer to:
   # https://github.com/flutter/flutter/blob/main/docs/infra/Updating-dependencies-in-Flutter.md
-  path: 1.9.1
-  process_runner: 4.2.0
+  path: any
+  process_runner: any
 
-  collection: 1.19.1
+  collection: any
 
-# PUBSPEC CHECKSUM: 3ohlgj
+# PUBSPEC CHECKSUM: gc27uq

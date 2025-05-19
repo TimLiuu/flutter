@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  google_fonts: 6.2.1
+  google_fonts: any
 
 
 flutter:
@@ -23,4 +23,4 @@ flutter:
     androidPackage: com.example.multiple_flutters_module
     iosBundleIdentifier: com.example.multipleFluttersModule
 
-# PUBSPEC CHECKSUM: fhkv8a
+# PUBSPEC CHECKSUM: d3aaeu

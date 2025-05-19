@@ -14,7 +14,7 @@ dependencies:
   stocks:
     path: ../test_apps/stocks
 
-  args: 2.7.0
+  args: any
 
 flutter:
   uses-material-design: true
@@ -85,4 +85,4 @@ flutter:
     - packages/flutter_gallery_assets/people/square/stella.png
     - packages/flutter_gallery_assets/people/square/trevor.png
 
-# PUBSPEC CHECKSUM: p4nca9
+# PUBSPEC CHECKSUM: e2psb8

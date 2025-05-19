@@ -8,18 +8,18 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  collection: 1.19.1
-  intl: 0.20.2
-  string_scanner: 1.4.1
-  url_launcher: 6.3.1
-  video_player: 2.9.5
-  scoped_model: 2.0.0
+  collection: any
+  intl: any
+  string_scanner: any
+  url_launcher: any
+  video_player: any
+  scoped_model: any
 
   # Also update dev/benchmarks/complex_layout/pubspec.yaml
   # and dev/benchmarks/macrobenchmarks/pubspec.yaml
 
-  path: 1.9.1
-  vector_math: 2.1.4
+  path: any
+  vector_math: any
 
 dev_dependencies:
   flutter_test:
@@ -28,11 +28,11 @@ dev_dependencies:
     sdk: flutter
   flutter_goldens:
     sdk: flutter
-  test: 1.25.15
+  test: any
   integration_test:
     sdk: flutter
 
-  file: 7.0.1
+  file: any
 
 flutter:
   uses-material-design: true
@@ -204,4 +204,4 @@ flutter:
       - asset: packages/flutter_gallery_assets/fonts/merriweather/Merriweather-Regular.ttf
       - asset: packages/flutter_gallery_assets/fonts/merriweather/Merriweather-Light.ttf
 
-# PUBSPEC CHECKSUM: hieukf
+# PUBSPEC CHECKSUM: j4ht2m

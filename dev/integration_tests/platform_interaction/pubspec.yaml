@@ -11,10 +11,10 @@ dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
 
 flutter:
   uses-material-design: true
 
-# PUBSPEC CHECKSUM: no2kui
+# PUBSPEC CHECKSUM: h8k76d

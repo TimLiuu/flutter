@@ -16,9 +16,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  web: 1.1.1
+  web: any
 
-  collection: 1.19.1
-  meta: 1.16.0
+  collection: any
+  meta: any
 
-# PUBSPEC CHECKSUM: los8ds
+# PUBSPEC CHECKSUM: tmcc6f

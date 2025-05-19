@@ -7,26 +7,26 @@ environment:
 resolution: workspace
 
 dependencies:
-  archive: 3.6.1
-  args: 2.7.0
-  http: 1.4.0
-  intl: 0.20.2
-  meta: 1.16.0
-  path: 1.9.1
-  process: 5.0.3
-  process_runner: 4.2.0
-  pub_semver: 2.2.0
-  yaml: 3.1.3
+  archive: any
+  args: any
+  http: any
+  intl: any
+  meta: any
+  path: any
+  process: any
+  process_runner: any
+  pub_semver: any
+  yaml: any
 
-  collection: 1.19.1
-  file: 7.0.1
-  platform: 3.1.6
+  collection: any
+  file: any
+  platform: any
 
 dev_dependencies:
-  test: 1.25.15
-  test_api: 0.7.4
+  test: any
+  test_api: any
 
 
-  matcher: 0.12.17
+  matcher: any
 
-# PUBSPEC CHECKSUM: 6bef9m
+# PUBSPEC CHECKSUM: 45kl3f

@@ -7,11 +7,11 @@ environment:
 resolution: workspace
 
 dependencies:
-  args: 2.7.0
-  file: 7.0.1
-  package_config: 2.2.0
-  path: 1.9.1
-  vm_snapshot_analysis: 0.7.6
+  args: any
+  file: any
+  package_config: any
+  path: any
+  vm_snapshot_analysis: any
 
 
-# PUBSPEC CHECKSUM: vs7ni6
+# PUBSPEC CHECKSUM: 4udvut

@@ -14,8 +14,8 @@ dependencies:
     sdk: flutter
   flutter_test:
     sdk: flutter
-  path: 1.9.1
-  vm_service: 15.0.0
+  path: any
+  vm_service: any
 
 
 dev_dependencies:
@@ -32,4 +32,4 @@ flutter:
       ios:
         pluginClass: IntegrationTestPlugin
 
-# PUBSPEC CHECKSUM: fm6i4n
+# PUBSPEC CHECKSUM: ibc5b9

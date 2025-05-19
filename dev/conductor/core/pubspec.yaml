@@ -9,18 +9,18 @@ environment:
 resolution: workspace
 
 dependencies:
-  args: 2.7.0
-  meta: 1.16.0
-  path: 1.9.1
-  process: 5.0.3
-  protobuf: 4.0.0
+  args: any
+  meta: any
+  path: any
+  process: any
+  protobuf: any
 
-  file: 7.0.1
-  fixnum: 1.1.1
-  platform: 3.1.6
+  file: any
+  fixnum: any
+  platform: any
 
 dev_dependencies:
-  test: 1.25.15
+  test: any
 
 
-# PUBSPEC CHECKSUM: n78bmd
+# PUBSPEC CHECKSUM: k8jdos

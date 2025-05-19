@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  material_color_utilities: 0.11.1
+  material_color_utilities: any
 
 dev_dependencies:
   flutter_test:
@@ -21,4 +21,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-# PUBSPEC CHECKSUM: 7ocjjj
+# PUBSPEC CHECKSUM: oljp94

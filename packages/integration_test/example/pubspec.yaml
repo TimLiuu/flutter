@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  web: 1.1.1
+  web: any
 
 
 dev_dependencies:
@@ -24,7 +24,7 @@ dev_dependencies:
     sdk: flutter
   integration_test_macos:
     path: ../integration_test_macos
-  test: 1.25.15
+  test: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -33,4 +33,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-# PUBSPEC CHECKSUM: nbrvdu
+# PUBSPEC CHECKSUM: 9u3lhs

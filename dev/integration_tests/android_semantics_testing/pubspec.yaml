@@ -12,11 +12,11 @@ dependencies:
     sdk: flutter
   flutter_test:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
-  meta: 1.16.0
+  meta: any
 
 flutter:
   uses-material-design: true
 
-# PUBSPEC CHECKSUM: q2cu90
+# PUBSPEC CHECKSUM: lm0mol

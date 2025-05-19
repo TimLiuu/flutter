@@ -17,7 +17,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
 
 flutter:
@@ -30,4 +30,4 @@ flutter:
       assets:
         - customassets/flutter_logo.png
 
-# PUBSPEC CHECKSUM: ng5thq
+# PUBSPEC CHECKSUM: a427t1

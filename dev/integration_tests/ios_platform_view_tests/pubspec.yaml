@@ -17,7 +17,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
 
 flutter:
@@ -27,4 +27,4 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-# PUBSPEC CHECKSUM: ng5thq
+# PUBSPEC CHECKSUM: a427t1

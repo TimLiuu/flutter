@@ -10,8 +10,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: 0.20.2
-  http: 1.4.0
+  intl: any
+  http: any
 
 
 dev_dependencies:
@@ -19,11 +19,11 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
 
 flutter:
   generate: true
   uses-material-design: true
 
-# PUBSPEC CHECKSUM: uh5k3v
+# PUBSPEC CHECKSUM: 53pdfi

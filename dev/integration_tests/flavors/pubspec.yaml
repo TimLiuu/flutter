@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
 
 dev_dependencies:
@@ -32,4 +32,4 @@ flutter:
       flavors:
         - free
 
-# PUBSPEC CHECKSUM: dv1054
+# PUBSPEC CHECKSUM: mv8fb2

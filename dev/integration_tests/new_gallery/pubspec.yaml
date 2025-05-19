@@ -14,26 +14,26 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  adaptive_breakpoints: 0.1.7
-  animations: 2.0.11
-  collection: 1.19.1
-  flutter_localized_locales: 2.0.5
-  flutter_staggered_grid_view: 0.7.0
-  google_fonts: 6.2.1
-  intl: 0.20.2
-  provider: 6.1.5
-  scoped_model: 2.0.0
-  url_launcher: 6.3.1
-  vector_math: 2.1.4
+  adaptive_breakpoints: any
+  animations: any
+  collection: any
+  flutter_localized_locales: any
+  flutter_staggered_grid_view: any
+  google_fonts: any
+  intl: any
+  provider: any
+  scoped_model: any
+  url_launcher: any
+  vector_math: any
 
-  nested: 1.0.0
+  nested: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
 
 flutter:
@@ -237,4 +237,4 @@ flutter:
       fonts:
         - asset: packages/flutter_gallery_assets/fonts/GalleryIcons.ttf
 
-# PUBSPEC CHECKSUM: p4ie49
+# PUBSPEC CHECKSUM: kas1f2

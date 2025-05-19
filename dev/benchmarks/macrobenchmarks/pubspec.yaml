@@ -19,13 +19,13 @@ dependencies:
   # and run
   #   flutter update-packages --force-upgrade
 
-  args: 2.7.0
-  web: 1.1.1
+  args: any
+  web: any
 
-  meta: 1.16.0
+  meta: any
 
 dev_dependencies:
-  test: 1.25.15
+  test: any
   integration_test:
     sdk: flutter
 
@@ -162,4 +162,4 @@ flutter:
       fonts:
         - asset: packages/flutter_gallery_assets/fonts/GalleryIcons.ttf
 
-# PUBSPEC CHECKSUM: misu14
+# PUBSPEC CHECKSUM: ln2m5t

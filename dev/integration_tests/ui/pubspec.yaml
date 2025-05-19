@@ -13,9 +13,9 @@ dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-  test: 1.25.15
+  test: any
 
-  path: 1.9.1
+  path: any
 
 dev_dependencies:
   flutter_test:
@@ -27,4 +27,4 @@ flutter:
   assets:
     - assets/foo.png
 
-# PUBSPEC CHECKSUM: dv1054
+# PUBSPEC CHECKSUM: bara0e

@@ -17,12 +17,12 @@ dependencies:
   # and run
   #   flutter update-packages --force-upgrade
 
-  path: 1.9.1
+  path: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: 1.25.15
+  test: any
   integration_test:
     sdk: flutter
 
@@ -33,4 +33,4 @@ flutter:
     - packages/flutter_gallery_assets/people/square/ali.png
     - packages/flutter_gallery_assets/places/india_chettinad_silk_maker.png
 
-# PUBSPEC CHECKSUM: misu14
+# PUBSPEC CHECKSUM: bara0e
