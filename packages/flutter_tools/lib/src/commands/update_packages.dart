@@ -25,7 +25,7 @@ import '../update_packages_pins.dart';
 //   https://github.com/pulls?q=author%3Aflutter-pub-roller-bot
 
 class UpdatePackagesCommand extends FlutterCommand {
-  UpdatePackagesCommand() {
+  UpdatePackagesCommand({required bool verboseHelp}) {
     argParser
       ..addFlag(
         _keyForceUpgrade,
@@ -38,7 +38,8 @@ class UpdatePackagesCommand extends FlutterCommand {
         _keyUpdateHashes,
         help: 'Update the hashes of the pubspecs.',
         negatable: false,
-        hide: true, // We don't want to promote usage, to not circumvent using this script to update
+        hide:
+            verboseHelp, // We don't want to promote usage, to not circumvent using this script to update
       )
       ..addOption(
         _keyCherryPickPackage,
