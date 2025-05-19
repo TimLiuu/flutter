@@ -165,6 +165,7 @@ class UpdatePackagesCommand extends FlutterCommand {
     final FlutterProject project = FlutterProject.fromDirectory(rootDirectory);
     final List<Directory> packages = <Directory>[...runner!.getRepoPackages(), rootDirectory];
 
+    _verifyPubspecs(packages);
     if (cherryPick != null) {
       globals.printStatus(
         'Pinning package "${cherryPick.package}" to version "${cherryPick.version}"...',
@@ -177,7 +178,7 @@ class UpdatePackagesCommand extends FlutterCommand {
         command: 'add',
       );
 
-      _writePubspecs(packages);
+      _writeHashesToPubspecs(packages);
     } else if (forceUpgrade) {
       globals.printStatus('Upgrading packages versions...');
 
@@ -188,17 +189,22 @@ class UpdatePackagesCommand extends FlutterCommand {
         command: 'update',
       );
 
-      _writePubspecs(packages);
-      _checkWithFlutterTools(rootDirectory);
-    } else {
-      globals.printStatus('Running pub get only...');
-      if (updateHashes) {
-        _writePubspecs(packages);
-      }
-      _verifyPubspecs(packages);
-
-      await pub.get(context: PubContext.pubGet, project: project);
+      _writeHashesToPubspecs(packages);
     }
+    globals.printStatus('Running pub get only...');
+    if (updateHashes) {
+      _writeHashesToPubspecs(packages);
+    }
+    _verifyPubspecs(packages);
+    _checkWithFlutterTools(rootDirectory);
+
+    await pub.get(context: PubContext.pubGet, project: project);
+    await pub.get(
+      context: PubContext.pubGet,
+      project: FlutterProject.fromDirectory(
+        project.directory.childDirectory('packages').childDirectory('flutter_tools'),
+      ),
+    );
 
     await _downloadCoverageData();
 
@@ -279,7 +285,7 @@ class UpdatePackagesCommand extends FlutterCommand {
     }
   }
 
-  void _writePubspecs(List<Directory> packages) {
+  void _writeHashesToPubspecs(List<Directory> packages) {
     globals.printStatus('Writing hashes to pubspecs...');
     for (final Directory directory in packages) {
       globals.printTrace('Reading pubspec.yaml from ${directory.path}');
