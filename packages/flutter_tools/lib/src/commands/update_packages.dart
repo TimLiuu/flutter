@@ -38,8 +38,8 @@ class UpdatePackagesCommand extends FlutterCommand {
         _keyUpdateHashes,
         help: 'Update the hashes of the pubspecs.',
         negatable: false,
-        hide:
-            verboseHelp, // We don't want to promote usage, to not circumvent using this script to update
+        // We don't want to promote usage, to not circumvent using this script to update
+        hide: !verboseHelp,
       )
       ..addOption(
         _keyCherryPickPackage,
