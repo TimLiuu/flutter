@@ -18,6 +18,8 @@ dependencies:
 
   collection: any
   vector_math: any
+  web: any
+  test: any
 
 dev_dependencies:
   integration_test:
