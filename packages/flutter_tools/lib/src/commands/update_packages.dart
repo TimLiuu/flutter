@@ -205,6 +205,17 @@ class UpdatePackagesCommand extends FlutterCommand {
         project.directory.childDirectory('packages').childDirectory('flutter_tools'),
       ),
     );
+    await pub.get(
+      context: PubContext.pubGet,
+      project: FlutterProject.fromDirectory(
+        project.directory
+            .childDirectory('packages')
+            .childDirectory('flutter_tools')
+            .childDirectory('test')
+            .childDirectory('widget_preview_scaffold.shard')
+            .childDirectory('widget_preview_scaffold'),
+      ),
+    );
 
     await _downloadCoverageData();
 
