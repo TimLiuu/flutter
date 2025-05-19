@@ -183,6 +183,9 @@ class UpdatePackagesCommand extends FlutterCommand {
       _checkWithFlutterTools(rootDirectory);
     } else {
       globals.printStatus('Running pub get only...');
+      if (const bool.fromEnvironment('RESET_HASH')) {
+        _writePubspecs(packages);
+      }
       _verifyPubspecs(packages);
 
       await pub.get(context: PubContext.pubGet, project: project);
